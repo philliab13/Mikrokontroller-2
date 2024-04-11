@@ -39,10 +39,14 @@ int main(){
     int sleep = 0;
     char reading = 'C';
     while(1){
-		reading=uart_read();
+		
+		
+		
+
 		if (isBtnPressed(13)){
 			uart_send('A');
 			reading=uart_read();
+			
 			
 		}
 	    if (isBtnPressed(14)){
@@ -51,14 +55,12 @@ int main(){
 		
 		}
 
+		
         
         if(reading == 'A'){
            led_on(17);
         }else if(reading == 'B'){
            led_on(18);
-        }else if (reading=='C')
-		{
-			led_on(19);
 		}else if (reading=='\0')
 		{
 			led_on(20);

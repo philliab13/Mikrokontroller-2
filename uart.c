@@ -29,10 +29,9 @@ void uart_send(char letter){
 }
 
 char uart_read(){
-    // UART->TASKS_STARTRX = 1;
+    //  UART->TASKS_STARTRX = 1;
     if(UART->EVENTS_RXDRDY ==1){
         UART->EVENTS_RXDRDY = 0;
-        
         return UART->RXD ;
     }
     // UART->TASKS_STOPRX = 1;
